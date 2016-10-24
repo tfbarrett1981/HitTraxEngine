@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'ManifoldCF-Regular';
+  src: url('../webfonts/Manifold CF/ManifoldCF-Regular-webfont.eot');
+  src: url('../webfonts/Manifold CF/ManifoldCF-Regular-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Manifold CF/ManifoldCF-Regular-webfont.woff') format('woff'), url('../webfonts/Manifold CF/ManifoldCF-Regular-webfont.ttf') format('truetype'), url('../webfonts/Manifold CF/ManifoldCF-Regular-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'ManifoldCF-Light';
+  src: url('../webfonts/Manifold CF/ManifoldCF-Light-webfont.eot');
+  src: url('../webfonts/Manifold CF/ManifoldCF-Light-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Manifold CF/ManifoldCF-Light-webfont.woff') format('woff'), url('../webfonts/Manifold CF/ManifoldCF-Light-webfont.ttf') format('truetype'), url('../webfonts/Manifold CF/ManifoldCF-Light-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'ManifoldCF-Bold';
+  src: url('../webfonts/Manifold CF/ManifoldCF-Bold-webfont.eot');
+  src: url('../webfonts/Manifold CF/ManifoldCF-Bold-webfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Manifold CF/ManifoldCF-Bold-webfont.woff') format('woff'), url('../webfonts/Manifold CF/ManifoldCF-Bold-webfont.ttf') format('truetype'), url('../webfonts/Manifold CF/ManifoldCF-Bold-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'ManifoldCF-ExtraBold';
+  src: url('../webfonts/Manifold CF/ManifoldCF-ExtraBold-webfont.eot');
+  src: url('../webfonts/Manifold CF/ManifoldCF-ExtraBoldwebfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Manifold CF/ManifoldCF-ExtraBold-webfont.woff') format('woff'), url('../webfonts/Manifold CF/ManifoldCF-ExtraBold-webfont.ttf') format('truetype'), url('../webfonts/Manifold CF/ManifoldCF-ExtraBold-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'ManifoldCF-DemiBold';
+  src: url('../webfonts/Manifold CF/ManifoldCF-DemiBold-webfont.eot');
+  src: url('../webfonts/Manifold CF/ManifoldCF-DemiBoldwebfont.eot?#iefix') format('embedded-opentype'), url('../webfonts/Manifold CF/ManifoldCF-DemiBold-webfont.woff') format('woff'), url('../webfonts/Manifold CF/ManifoldCF-DemiBold-webfont.ttf') format('truetype'), url('../webfonts/Manifold CF/ManifoldCF-DemiBold-webfont.svg#webfont') format('svg');
+}
+@font-face {
+  font-family: 'Industry-Inc-Stencil';
+  src: url('../webfonts/Industry/IndustryInc-Stencil.eot');
+  src: url('../webfonts/Industry/IndustryInc-Stencil?#iefix') format('embedded-opentype'), url('../webfonts/Industry/IndustryInc-Stencil.woff') format('woff'), url('../webfonts/Industry/IndustryInc-Stencil.ttf') format('truetype');
+  /*src: url('../webfonts/Industry/Hold Fast Foundry - Industry Inc Stencil.otf');*/
+}
+
+header{
+     background: url(../images/background-header.png) center center no-repeat;
+  background-size: cover;
+  height: 685px;
+  position: relative;
+
+    
+  
+}
+
+header .container{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+header h2{
+
+    font-family: "ManifoldCF-Regular";
+    font-weight: bold;
+    text-transform: uppercase;
+    color:#fff;
+    font-size: 28px;
+    text-align: right;
+}
+
+header .topnav{
+    font-size: 14px;
+    color:#fff;
+    font-weight: bold;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+header .topnav li{
+    float: left;
+    padding-left:10px;
+    padding-right:10px;
+    line-height: 14px;
+    
+}
+header .topnav li:first-child{
+    padding-left: 0;
+    border-right:solid #fff 1px;
+}
+
+header .topnav li:last-child{
+    padding-right: 0;
+    border-left:solid #fff 1px;
+
+}
+header .topnav a{
+    color:#fff;
+}
+
+header .topWrapper{
+    padding-top: 10px;
+    padding-right: 15px;
+}
+header #logo{
+
+  padding-top: 15px;
+}
+
+nav{
+    background: #C8001E;
+    height: 60px;
+}
