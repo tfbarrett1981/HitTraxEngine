@@ -33,7 +33,7 @@
 header{
      background: url(../images/background-header.png) top center no-repeat;
   background-size: cover;
-  height: 530px;
+
   position: relative;
 
     
@@ -129,4 +129,46 @@ nav ul li a{
 nav ul li a:hover{
     color: #fff;
     text-decoration: none;
+}
+header .search{
+    background: rgba(0, 0, 0, 0.7);
+    height: 100%;
+}
+
+header .search .container{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+header .search label{
+    display: block;
+    color:#fff;
+    font-weight: normal;
+}
+
+header .search select{
+    display: block;
+    width: 100%;
+    -webkit-appearance: none; 
+-moz-appearance: none; 
+appearance: none; 
+background: rgba(255, 255, 255, 0.1);
+border-radius: 5    px;
+border:none;
+height: 40px;
+position: relative;
+padding:0 10px;
+color:#fff;
+margin-bottom: 10px;
+}
+
+.overlay-arrow{
+    font-size: 17px;
+color: #fff;
+position: absolute;
+right: 25px;
+top: 48px;
+cursor: default;
+line-height: 1px;
+
+
 }
