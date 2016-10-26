@@ -146,14 +146,15 @@ header .search label{
     font-weight: normal;
 }
 
-header .search select{
+header .search select,
+header .search input[type="text"]{
     display: block;
     width: 100%;
     -webkit-appearance: none; 
 -moz-appearance: none; 
 appearance: none; 
 background: rgba(255, 255, 255, 0.1);
-border-radius: 5    px;
+border-radius: 5px;
 border:none;
 height: 40px;
 position: relative;
@@ -161,12 +162,14 @@ padding:0 10px;
 color:#fff;
 margin-bottom: 10px;
 }
-
+.searchElement{
+    position: relative;
+}
 .overlay-arrow{
     font-size: 17px;
 color: #fff;
 position: absolute;
-right: 25px;
+right: 10px;
 top: 48px;
 cursor: default;
 line-height: 1px;
