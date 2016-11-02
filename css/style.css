@@ -146,8 +146,8 @@ header .search label{
     font-weight: normal;
 }
 
-header .search select,
-header .search input[type="text"]{
+select.searchSelect,
+input[type="text"].searchTextbox{
     display: block;
     width: 100%;
     -webkit-appearance: none; 
@@ -165,6 +165,7 @@ margin-bottom: 10px;
 .searchElement{
     position: relative;
 }
+
 .overlay-arrow{
     font-size: 17px;
 color: #fff;
@@ -176,3 +177,125 @@ line-height: 1px;
 
 
 }
+
+section.searchCriteria{
+    background: url(../images/background-search-criteria.png);
+    min-height: 210px;
+    padding-top: 30px;
+}
+
+section.searchCriteria ul.searchNav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+section.searchCriteria h3{
+    font-family: "ManifoldCF-Bold";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+section.searchCriteria ul.searchNav li{
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-right:solid 1px #C8002D;
+    height: 28px;
+    line-height: 28px;
+    text-align: middle;
+    font-weight: bold;
+}
+section.searchCriteria ul.searchNav li:first-child{
+    padding-left: 0;
+}
+section.searchCriteria ul.searchNav li a{
+color: #333333;
+}
+
+section.searchCriteria ul.searchNav li a.active{
+color: #C8002D;
+}
+
+section.searchCriteria ul.searchNav li a.disabled{
+color:rgba(51, 51, 51, 0.3);
+}
+
+section.searchCriteria .searchItems{
+    list-style: none;
+    margin:0;
+    padding: 0;
+    color:#333333;
+    font-size: 16px;
+}
+section.searchCriteria .searchItems li{
+background-color: #EFEFEF;
+float: left;
+border-radius: 5px;
+padding:5px 10px;
+margin-right: 10px;
+margin-bottom: 10px;
+}
+
+section.searchCriteria .searchItems li:hover{
+background-color:#C8001E;
+color:#fff;
+}
+
+section.searchCriteria .searchItems li span{
+color:#C8001E;
+padding-right: 5px;
+}
+
+section.searchCriteria .searchItems li:hover span{
+color:#222222;
+}
+
+
+
+.searchAction{
+    position: relative;
+}
+
+input.searchSubmit{
+    border-radius: 5px;
+    border:solid 3px #C8001E;
+    background: transparent;
+    height: 50px;
+    padding: 10px;
+    width:100%;
+    font-family: "ManifoldCF-Bold";
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+input.searchSubmit + span.glyphicon-search{
+    color:#C8001E;
+    font-size: 30px;
+    position: absolute;
+    top:10px;
+    right:27px;
+}
+
+.savedSearchSelect{
+    background: rgba(78, 78, 78, 0.9);
+    border-radius: 5px;
+    position: relative;
+    height: 50px;
+    margin-top: 20px;
+}
+.savedSearchSelect select{
+    background: transparent;
+    height: 100%;
+    font-family: "ManifoldCF-Bold";
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.savedSearchSelect .overlay-arrow{
+    top:23px;
+} 
