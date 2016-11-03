@@ -95,7 +95,7 @@ header #logo{
 
 nav{
     background: #C8001E;
-    height: 60px;
+    /*height: 60px;*/
 }
 
 nav ul{
@@ -319,7 +319,6 @@ table thead th:first-child{
     background-color: #7B0012;
     text-transform: uppercase;
     font-weight: bold;
-    min-width: 250px;
 }
 
 table tbody th:nth-child(2){
@@ -439,6 +438,8 @@ text-transform: uppercase;
 
 footer.large .footerNav ul li{
     margin-bottom: 15px;
+    float:left;
+    margin-right: 15px;
 }
 
 footer.large .footerNav ul a:hover{
@@ -492,7 +493,6 @@ footer.large .socialNav input[type="email"]{
 
 footer.footerBar{
     background-color: #1B1B1B;
-    height: 60px;
     line-height: 60px;
     color:#fff;
 }
@@ -502,13 +502,13 @@ footer.footerBar a{
 }
 
 footer.footerBar .privacyTerms{
-    padding-left: 70px;
+    text-align:center;
 }
 
 footer.footerBar .copyright{
     color:#fff;
-    text-align: right;
-    padding-right: 70px;
+    text-align: left;
+    text-align:center;
 }
 
 footer.footerBar a:first-child{
@@ -518,3 +518,29 @@ footer.footerBar a:first-child{
 footer.footerBar a:last-child{
     margin-left: 20px;
 }
+
+@media(min-width:768px){
+    
+    table thead th:first-child{ 
+        min-width: 250px;
+    }
+    
+    
+
+}
+
+@media(min-width:992px){
+
+    footer.footerBar .privacyTerms{
+        padding-left: 70px;
+        text-align: left;
+    }
+
+    footer.footerBar .copyright{
+        color:#fff;
+        text-align: right;
+        padding-right: 70px;
+    }
+}
+
+
