@@ -127,10 +127,26 @@ nav ul li a{
     font-weight: bold;
 }
 
+nav ul li a:link{
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:visited{
+    color: #fff;
+    text-decoration: none;
+}
+
 nav ul li a:hover{
     color: #fff;
     text-decoration: none;
 }
+
+nav ul li a:active{
+    color: #fff;
+    text-decoration: none;
+}
+
 header .search{
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
