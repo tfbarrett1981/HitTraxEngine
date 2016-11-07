@@ -43,16 +43,16 @@
         <nav>
             <div class="container">
                 <ul class="row clearfix">
-                    <li class="col-sm-4 col-xs-12"><a href="#">Player Details<span class="pull-right"><img src="images/tab-x.png" alt=""></span></a></li>
-                    <li class="col-sm-4 col-xs-12"><a href="#">HitTrax Metrics<span class="pull-right"><img src="images/tab-arrow.png" alt=""></span></a></li>
-                    <li class="col-sm-4 col-xs-12"><a href="#">Scouting Report<span class="pull-right"><img src="images/tab-arrow.png" alt=""></span></a></li>
+                    <li data-tab="playerDetail" class="tab col-sm-4 col-xs-12"><a href="#">Player Details<span class="pull-right"><img src="images/tab-arrow.png" alt=""></span></a></li>
+                    <li data-tab="hittraxMetrics" class="tab col-sm-4 col-xs-12"><a href="#">HitTrax Metrics<span class="pull-right"><img src="images/tab-arrow.png" alt=""></span></a></li>
+                    <li data-tab="scoutingReports" class="tab col-sm-4 col-xs-12"><a href="#">Scouting Report<span class="pull-right"><img src="images/tab-arrow.png" alt=""></span></a></li>
                 </ul>
             </div>
         </nav>
         <div class="search">
             <div class="container">
                 <!-- PLAYER DETAIL BEGIN -->
-                <div class="row playerDetail">
+                <div class="row playerDetail hidden">
                     <div class="col-sm-3">
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Player Name (if known)</label>
@@ -179,13 +179,10 @@
                 <!-- PLAYER DETAIL END -->  
                 <!-- HITRAX METRICS BEGIN -->
                 <div class="row hittraxMetrics hidden">
-                    <div class="col-sm-3">
+                    <div class="col-sm-2">
+                        <strong>HITTING</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Player Name (if known)</label>
-                            <input type="text">
-                        </div>
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Sport</label>
+                            <label for="" class="tk-proxima-nova">Max Exit Velocity ≥</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -195,29 +192,7 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">State</label>
-                            <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Region</label>
-                            <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
-                            <option value="">dfdfd</option>
-                            <option value="">cvcvc</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            </select>
-                        </div>
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Age</label>
+                            <label for="" class="tk-proxima-nova">Max Distance ≥</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -227,7 +202,17 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Graduation Year</label>
+                            <label for="" class="tk-proxima-nova">Launch Angle ≥</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Pitch Plate Speed ≥</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -237,9 +222,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-2">
+                        <strong>&nbsp;</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">GPA</label>
+                            <label for="" class="tk-proxima-nova">Avg. Exit Velocity ≥</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value="">dfdfd</option>
@@ -249,7 +235,7 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Height</label>
+                            <label for="" class="tk-proxima-nova">Avg. Distance ≥</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -259,7 +245,17 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Weight</label>
+                            <label for="" class="tk-proxima-nova">Launch Angle ≤</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Pitch Plate Speed ≤</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -269,9 +265,10 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-3">
+                    <div class="col-md-2">
+                        <strong>&nbsp;</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Position</label>                        
+                            <label for="" class="tk-proxima-nova">Line Drive %</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value="">dfdfd</option>
@@ -281,7 +278,7 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Bats (L/R/S)</label>
+                            <label for="" class="tk-proxima-nova">Ground Ball %</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -291,7 +288,74 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Throws (L/R)</label>
+                            <label for="" class="tk-proxima-nova">Fly Ball %</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2 vertical-divider"><img src="images/search-vertical-divider.png" /></div>
+                    <div class="col-sm-2">
+                        <strong>PITCHING</strong>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Strike %</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value="">dfdfd</option>
+                            <option value="">cvcvc</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Plate Speed</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field Five</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <strong>&nbsp;</strong>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Pitch Type</label>                        
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value="">dfdfd</option>
+                            <option value="">cvcvc</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Opp. Avg. Exit Velocity</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field Six</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
@@ -306,14 +370,11 @@
                 <!-- SCOUTING REPORTS BEGIN -->
                 <div class="row scoutingReports hidden">
                     <div class="col-sm-3">
+                        <strong>SWING</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Player Name (if known)</label>
-                            <input type="text">
-                        </div>
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Sport</label>
+                            <label for="" class="tk-proxima-nova">Efficiency Index</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -321,31 +382,9 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">State</label>
+                            <label for="" class="tk-proxima-nova">Power Index</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Region</label>
-                            <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
-                            <option value="">dfdfd</option>
-                            <option value="">cvcvc</option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            </select>
-                        </div>
-                        <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Age</label>
-                            <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -353,9 +392,19 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Graduation Year</label>
+                            <label for="" class="tk-proxima-nova">Swing Speed</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Time to Contact</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -364,10 +413,11 @@
                         </div>
                     </div>
                     <div class="col-sm-3">
+                        <strong>FIELDING</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">GPA</label>
+                            <label for="" class="tk-proxima-nova">Max Throw Velocity</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value="">dfdfd</option>
                             <option value="">cvcvc</option>
                             <option value=""></option>
@@ -375,9 +425,9 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Height</label>
+                            <label for="" class="tk-proxima-nova">Average Throw Velocity</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -385,9 +435,19 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Weight</label>
+                            <label for="" class="tk-proxima-nova">Throw Accuracy</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -396,10 +456,11 @@
                         </div>
                     </div>
                     <div class="col-sm-3">
+                        <strong>AGILITY</strong>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Position</label>                        
+                            <label for="" class="tk-proxima-nova">60 Yard Dash</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value="">dfdfd</option>
                             <option value="">cvcvc</option>
                             <option value=""></option>
@@ -407,9 +468,9 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Bats (L/R/S)</label>
+                            <label for="" class="tk-proxima-nova">Home to First</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -417,9 +478,62 @@
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Throws (L/R)</label>
+                            <label for="" class="tk-proxima-nova">10 Yard Dash</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova">
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">5-10-5 Shuttle</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <strong>COLUMN 4</strong>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field</label>                        
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value="">dfdfd</option>
+                            <option value="">cvcvc</option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            <option value=""></option>
+                            </select>
+                        </div>
+                        <div class="searchElement">
+                            <label for="" class="tk-proxima-nova">Search Field</label>
+                            <div class="overlay-arrow">▼</div>
+                            <select name="" id="" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value=""></option>
                             <option value=""></option>
@@ -590,5 +704,23 @@ lacinia dui, a porttitor lectus condimentum laoreet.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script>
+        jQuery( document ).ready(function($) {
+            
+            $(".tab").click(function(e){
+                $selectedTab = $(this);
+                $( ".tab" ).each(function( index ) {
+                    $("." + $(this).data("tab")).addClass("hidden");
+                    $(this).find("img").attr("src", "images/tab-arrow.png");
+                });
+
+                $selectedTab.find("img").attr("src", "images/tab-x.png");
+                var tabPanel = "." + $selectedTab.data("tab");
+                $(tabPanel).removeClass("hidden");
+
+            });
+
+        });
+    </script>
   </body>
 </html>
