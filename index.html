@@ -52,7 +52,7 @@
         <div class="search">
             <div class="container">
                 <!-- PLAYER DETAIL BEGIN -->
-                <div class="row playerDetail hidden">
+                <div class="row playerDetail">
                     <div class="col-sm-3">
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Player Name (if known)</label>
@@ -178,7 +178,7 @@
                 </div> 
                 <!-- PLAYER DETAIL END -->  
                 <!-- HITRAX METRICS BEGIN -->
-                <div class="row hittraxMetrics hidden">
+                <div class="row hittraxMetrics">
                     <div class="col-sm-2">
                         <strong>HITTING</strong>
                         <div class="searchElement">
@@ -368,7 +368,7 @@
                 </div> 
                 <!-- HITTRAX METRICS END -->  
                 <!-- SCOUTING REPORTS BEGIN -->
-                <div class="row scoutingReports hidden">
+                <div class="row scoutingReports">
                     <div class="col-sm-3">
                         <strong>SWING</strong>
                         <div class="searchElement">
@@ -707,16 +707,19 @@ lacinia dui, a porttitor lectus condimentum laoreet.
     <script>
         jQuery( document ).ready(function($) {
             
+            $( ".tab" ).each(function( index ) {
+                    $("." + $(this).data("tab")).hide();
+                });
             $(".tab").click(function(e){
                 $selectedTab = $(this);
                 $( ".tab" ).each(function( index ) {
-                    $("." + $(this).data("tab")).addClass("hidden");
+                    $("." + $(this).data("tab")).hide();
                     $(this).find("img").attr("src", "images/tab-arrow.png");
                 });
 
                 $selectedTab.find("img").attr("src", "images/tab-x.png");
                 var tabPanel = "." + $selectedTab.data("tab");
-                $(tabPanel).removeClass("hidden");
+                $(tabPanel).show();
 
             });
 
