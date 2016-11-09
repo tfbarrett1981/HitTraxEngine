@@ -354,6 +354,7 @@ table thead th:first-child{
     background-color: #7B0012;
     text-transform: uppercase;
     font-weight: bold;
+    
 }
 
 table tbody th:nth-child(2){
@@ -370,6 +371,7 @@ table tbody td{
 table tbody td:first-child{
     background-color: #B1011B;
     color:#fff;
+    cursor: hand;
     cursor: pointer;
     vertical-align: text-bottom;
     
