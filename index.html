@@ -61,21 +61,22 @@
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Sport</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <select name="" id="selectSport" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="Baseball">Baseball</option>
+                            <option value="Softball">Softball</option>
+                            <option value="Wiffleball">Wiffle Ball</option>
                             <option value=""></option>
                             </select>
                         </div>
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">State</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <select name="" id="selectState" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="CT">CT</option>
+                            <option value="MA">MA</option>
+                            <option value="RI">RI</option>
                             </select>
                         </div>
                     </div>
@@ -83,31 +84,32 @@
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Region</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
-                            <option value="">dfdfd</option>
-                            <option value="">cvcvc</option>
+                            <select name="" id="selectRegion" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
+                            <option value="North East">North East</option>
+                            <option value="SouthEast">South East</option>
+                            <option value="Mid West">Mid West</option>
                             </select>
                         </div>
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Age</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <select name="" id="selectAge" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="5-8">5-8</option>
+                            <option value="9-11">9-11</option>
+                            <option value="12-14">12-14</option>
+                            
                             </select>
                         </div>
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Graduation Year</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
+                            <select name="" id="selectGraduation" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
                             </select>
                         </div>
                     </div>
@@ -115,11 +117,12 @@
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">GPA</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="" id="" class="tk-proxima-nova searchSelect">
-                            <option value="">dfdfd</option>
-                            <option value="">cvcvc</option>
+                            <select name="" id="selectGpa" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
+                            <option value=">4.0">>4.0</option>
+                            <option value=">3.0">>3.0</option>
+                            <option value=">2.0">>2.0</option>
+                            
                             </select>
                         </div>
                         <div class="searchElement">
@@ -559,13 +562,7 @@
                         <li><a class="disabled" href="#">Start Over</a></li>
                     </ul>
                     <ul class="searchItems clearfix">
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Sport: Baseball</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Age: 19-23</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Position: Shortstop</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Avg Exit Velo: 90-95mph</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Time to Contact: 1.0sec</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Position: Shortstop</li>
-                        <li class="tk-proxima-nova"><span class="glyphicon glyphicon-remove-circle"></span>Sport: Baseball</li>
+                        
                         
                     </ul>
                 </div>
@@ -721,6 +718,14 @@ lacinia dui, a porttitor lectus condimentum laoreet.
                 var tabPanel = "." + $selectedTab.data("tab");
                 $(tabPanel).show();
 
+            });
+
+            $("select").change(function(){
+                var changedSelect = $(this);
+                var label = $(this).siblings("label");
+                $(".searchItems").find("." + changedSelect.attr("id")).remove();
+                $(".searchItems").append("<li class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
+                
             });
 
         });
