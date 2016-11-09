@@ -190,6 +190,9 @@ padding:0 10px;
 color:#fff;
 margin-bottom: 10px;
 }
+select.searchSelect option{
+    background-color: #7B0012 !important;
+}
 .searchElement{
     position: relative;
 }
