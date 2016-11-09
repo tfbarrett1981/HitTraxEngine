@@ -733,7 +733,7 @@ lacinia dui, a porttitor lectus condimentum laoreet.
                 var label = $(this).siblings("label");
                 $(".searchItems").find("." + changedSelect.attr("id")).remove().delay("1000");
                 $(".searchItems").delay(100).queue(function(next){
-                    $(this).append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" '><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
+                    $(this).append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
                     next();
                     });
                 
