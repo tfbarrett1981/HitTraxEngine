@@ -267,6 +267,10 @@ border-radius: 5px;
 padding:5px 10px;
 margin-right: 10px;
 margin-bottom: 10px;
+display: block;
+height: 32px;
+min-width: 50px;
+overflow: visible;
 }
 
 section.searchCriteria .searchItems li:hover{

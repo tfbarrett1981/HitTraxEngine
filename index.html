@@ -55,8 +55,8 @@
                 <div class="row playerDetail">
                     <div class="col-sm-3">
                         <div class="searchElement">
-                            <label for="" class="tk-proxima-nova">Player Name (if known)</label>
-                            <input type="text" class="searchTextbox">
+                            <label for="" class="tk-proxima-nova">Player Name</label>
+                            <input id="textboxName" type="text" class="searchTextbox">
                         </div>
                         <div class="searchElement">
                             <label for="" class="tk-proxima-nova">Sport</label>
@@ -720,12 +720,29 @@ lacinia dui, a porttitor lectus condimentum laoreet.
 
             });
 
-            $("select").change(function(){
+            $(".search select").change(function(){
                 var changedSelect = $(this);
                 var label = $(this).siblings("label");
                 $(".searchItems").find("." + changedSelect.attr("id")).remove();
-                $(".searchItems").append("<li class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
+                $(".searchItems").append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
                 
+            });
+
+            $(".search input[type='text']").focusout(function(){
+                var changedSelect = $(this);
+                var label = $(this).siblings("label");
+                $(".searchItems").find("." + changedSelect.attr("id")).remove().delay("1000");
+                $(".searchItems").delay(100).queue(function(next){
+                    $(this).append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" '><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
+                    next();
+                    });
+                
+            });
+
+            $("body").on("click", ".glyphicon-remove-circle", function(){
+                var parentFormElement = $(this).parent().data("parent");
+                $(this).parent().remove();
+                $("#"+ parentFormElement).val('');
             });
 
         });
