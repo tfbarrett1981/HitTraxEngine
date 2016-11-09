@@ -370,6 +370,8 @@ table tbody td{
 table tbody td:first-child{
     background-color: #B1011B;
     color:#fff;
+    cursor: pointer;
+    vertical-align: text-bottom;
     
 }
 
@@ -406,6 +408,10 @@ table tbody tr.selected td{
     color:#fff;
 }
 
+table tbody tr.selected td:first-child{
+    
+}
+
 table tbody td span.glyphicon{
     display:none;
 }
@@ -413,7 +419,6 @@ table tbody td span.glyphicon{
 table tbody tr.selected td span.glyphicon{
     display:block;
     font-size: 18px;
-    line-height: 36px;
 }
 
 footer.large{
