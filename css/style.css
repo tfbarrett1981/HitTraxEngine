@@ -32,7 +32,7 @@
 
 header{
      background: url(../images/background-header.png) top center no-repeat;
-  background-size: cover;
+  background-size:100%;
 
   position: relative;
 
@@ -40,12 +40,17 @@ header{
   
 }
 
-header .container.banner{
+.home header{
+    min-height: 930px;
+    background-color: #C8001E;
+}
+
+.main header .container.banner{
     padding-top: 20px;
     padding-bottom: 50px;
 }
 
-header h2{
+.main header h2{
 
     font-family: "ManifoldCF-Regular";
     font-weight: bold;
@@ -55,7 +60,7 @@ header h2{
     text-align: right;
 }
 
-header .topnav{
+.main header .topnav{
     font-size: 14px;
     color:#fff;
     font-weight: bold;
@@ -63,47 +68,62 @@ header .topnav{
     margin: 0;
     padding: 0;
 }
-header .topnav li{
+.main header .topnav li{
     float: left;
     padding-left:10px;
     padding-right:10px;
     line-height: 14px;
     
 }
-header .topnav li:first-child{
+.main header .topnav li:first-child{
     padding-left: 0;
     border-right:solid #fff 1px;
 }
 
-header .topnav li:last-child{
+.main header .topnav li:last-child{
     padding-right: 0;
     border-left:solid #fff 1px;
 
 }
-header .topnav a{
+.main header .topnav a{
     color:#fff;
 }
 
-header .topWrapper{
+.main header .topWrapper{
     padding-top: 10px;
     padding-right: 15px;
 }
-header #logo{
+.main header #logo{
 
   padding-top: 15px;
 }
 
-nav{
+.home header #logo{
+margin: 0 auto;
+display: block;
+  padding-top: 77px;
+}
+
+.home .banner p{
+    color:#fff;
+    text-align: center;
+    font-size:18px;
+    padding-top: 22px;
+    padding-bottom: 45px;
+    font-family: "proxima-nova";
+}
+
+.main nav{
     background: #C8001E;
     /*height: 60px;*/
 }
 
-nav ul{
+.main nav ul{
     list-style: none;
     margin: 0;
     padding: 0;
 }
-nav ul li{  
+.main nav ul li{  
     width: 33.33%;
     float: left;
     line-height: 60px;
@@ -113,62 +133,63 @@ nav ul li{
     
 }
 
-nav ul li:first-child{
+.main nav ul li:first-child{
     background-color: #000;
 }
 
-nav ul li:last-child{
+.main nav ul li:last-child{
     background-color: #5A020F;
 }
-nav ul li a{
+.main nav ul li a{
     font-family: "ManifoldCF-Regular";
     font-size: 18px;
     color: #fff;
     font-weight: bold;
 }
 
-nav ul li a:link{
+.main nav ul li a:link{
     color: #fff;
     text-decoration: none;
 }
 
-nav ul li a:visited{
+.main nav ul li a:visited{
     color: #fff;
     text-decoration: none;
 }
 
-nav ul li a:hover{
+.main nav ul li a:hover{
     color: #fff;
     text-decoration: none;
 }
 
-nav ul li a:active{
+.main nav ul li a:active{
     color: #fff;
     text-decoration: none;
 }
 
-header .search{
+.main header .search{
     background: rgba(0, 0, 0, 0.7);
     height: 100%;
 }
 
-header .search .container .row{
+.main header .search .container .row{
     padding-top: 30px;
     padding-bottom: 30px;
 }
 
-header .search .vertical-divider{
+.main header .search .vertical-divider{
     text-align:center;
+    min-height: 30px;
 }
 
-header .search strong{
+.main header .search strong{
     font-family: "ManifoldCF-Regular";
     color:#fff;
     font-weight: bold;
     margin-bottom: 7px;
     display: block;
 }
-header .search label{
+.main header .search label{
     display: block;
     color:#fff;
     font-weight: normal;
@@ -202,7 +223,7 @@ select.searchSelect option{
 color: #fff;
 position: absolute;
 right: 10px;
-top: 48px;
+bottom: 18px;
 cursor: default;
 line-height: 1px;
 
@@ -584,5 +605,39 @@ footer.footerBar a:last-child{
         padding-right: 70px;
     }
 }
+
+.home nav{
+    position: relative;
+}
+.home nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear:left;
+    float: left;
+    position: relative;
+    left:50%;
+
+}
+.home nav ul li{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    right: 50%;
+    height: 128px;
+    line-height: 128px;
+}
+
+.home nav ul li{
+    margin-right: 50px;
+}
+
+.home nav ul li:last-child{
+    margin-right: 0;
+}
+
+
 
 
