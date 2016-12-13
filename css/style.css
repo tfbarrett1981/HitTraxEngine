@@ -782,7 +782,7 @@ footer.footerBar a:last-child{
 .profileName{
     font-family: "ManifoldCF-Regular";
     font-size: 20px;
-    color:#333;
+    color:#C8001E;
     text-align: center;
 }
 
@@ -792,7 +792,7 @@ footer.footerBar a:last-child{
 }
 
 .profileName strong{
-    color:#C8001E; ;
+    color:#fff; ;
 }
 
 .statsFilter {
@@ -809,10 +809,6 @@ footer.footerBar a:last-child{
     font-size: 26px;
 }
 
-.profileHeader select.searchSelect{
-    background: rgba(0, 0, 0, 0.7);
-    border:solid 2px #C8002D;
-}
 
 
 .statsFilter .input-group-addon{
@@ -872,10 +868,6 @@ footer.footerBar a:last-child{
     color:#fff; ;
 }
 
-.profileHeader select.searchSelect{
-    background: rgba(255, 255, 255, 0.1);
-    border:none; 
-}
 }
 
 @media(min-width:992px){
