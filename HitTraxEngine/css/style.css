@@ -93,6 +93,7 @@ header{
   background-size:100%;
 
   position: relative;
+
 background-color: #c60421;
     
   
@@ -420,6 +421,11 @@ table{
     width: 100%;
 }
 
+.table .noresults td{
+    text-align: center;
+    font-weight: bold;
+}
+
 table thead th{
     background-color: #333; 
     color:#fff;
@@ -428,6 +434,7 @@ table thead th{
     font-size: 15px;
     font-weight: normal;
     padding: 0 15px;
+    text-align: center;
     
 }
 
@@ -435,6 +442,7 @@ table thead th:first-child{
     background-color: #7B0012;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: left;
     
 }
 
@@ -446,6 +454,7 @@ table tbody td{
     padding: 0 15px;
     height: 36px;
     line-height: 36px;
+    text-align: center;
     
     
 }
@@ -455,6 +464,7 @@ table tbody td:first-child{
     cursor: hand;
     cursor: pointer;
     vertical-align: text-bottom;
+    text-align: left;
     
 }
 
@@ -725,177 +735,6 @@ footer.footerBar a:last-child{
 .home nav ul li:last-child img{
    float: right;
 }
-
-
-.page.profile header .container.banner{
-    padding-top: 20px;
-    padding-bottom: 0;
-}
-
-.headerProfilePic{
-    display: none;
-}
-
-.backSearch{
-    
-    line-height: 36px;
-    margin-top: 10px;
-}
-
-.backSearch a{
-    color:#fff;
-    font-family: "proxima-nova";
-    font-weight: bold;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding:0px 10px;
-    line-height: 36px;
-    height: 36px;
-    display: inline-block;
-}
-.backSearch i{
-    color:#C8001E;
-}
-.profileHeader{
-   background-color: rgba(0, 0, 0, 0.7); 
-   margin-bottom: 25px;
-   padding-bottom: 12px;
-   height: 90px;
-}
-
-.profileHeader .row{
-    position: relative;
-}
-.profileName{
-    
-}
-
-.profileHeader .profilePic{
-    width: 75%;
-    max-width: 140px;
-    border-radius: 50%;
-    background: url(../images/teddy.jpg) no-repeat;
-    background-size: cover;
-    
-    filter:grayscale(100%);
-    margin:0 auto;
-    margin-top: 15px;
-    display: block;
-
-}
-
-.profileName{
-    font-family: "ManifoldCF-Regular";
-    font-size: 20px;
-    color:#333;
-    text-align: center;
-}
-
-.profileName h4{
-    font-family: "ManifoldCF-Regular";
-    font-size: 100%;
-}
-
-.profileName strong{
-    color:#C8001E; ;
-}
-
-.statsFilter {
-
-}
-.statsFilter form{
-
-    font-family: "ManifoldCF-Regular";
-    position: relative;
-    bottom:0px;
-}
-.statsFilter i{
-    color:#C8002D;
-    font-size: 26px;
-}
-
-.statsFilter .input-group-addon{
-    background: transparent;
-    border:0;
-}
-
-.statsFilter .overlay-arrow{
-    bottom:27px;
-}
-
-.profileContent{
-    margin-top: 20px;
-}
-
-.generalStats{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.generalStats li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    font-family: "proxima-nova";
-    font-size: 18px;
-    color:#333333;
-    padding-right: 10px;
-}
-
-.generalStats li strong{
-    color:#C8001E;
-    padding-right: 10px;
-}
-
-@media(min-width:768px){
-
-
-.profileHeader{
- position: relative;
-  height: 120px;
-}
-.profileHeader h4{
-    font-size:28px;
-}
-.profileHeader .row{
-    position: relative;
-}
-.profileName{
-    margin-top: 65px;
-    color:#C8001E;
-}
-
-.profileName strong{
-    color:#fff; ;
-}
-}
-
-@media(min-width:992px){
-.headerProfilePic{
-    display: block;
-}
-
-.profileHeader{
- position: relative;
-  height: 160px;
-}
-
-
-.profileHeader .profilePic{
-    max-width:75%;
-    position: absolute;
-}
-
-.profileHeader h4{
-    font-size:31px;
-}
-.profileName{
-    margin-top: 95px;
-}
-}
-
-
 
 
 

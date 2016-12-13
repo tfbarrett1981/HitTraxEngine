@@ -1,0 +1,65 @@
+    <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+    <script src="https://use.typekit.net/fmq0kbm.js"></script>
+    <script>
+        try{Typekit.load({async:true}); }catch(e){} 
+        </script>
+    <!-- Bootstrap -->
+    <link href="<?php echo get_bloginfo("template_url") ;?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo get_bloginfo("template_url") ;?>/css/style.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body  <?php body_class(isset($class) ? $class : ''); ?>>
+    <header>
+        <div class="container banner">
+            <div class="row">
+                <div class="col-md-12 col-lg-12">
+                    <img id="logo" src="<?php echo get_bloginfo("template_url") ;?>/images/logo.png" alt="">
+                    <p class="">Select your HitTrax account type and enter your username and password.</p>
+                    </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="row row-centered">
+                <ul>
+                    <li class="hidden-xs   col-sm-2"><img src="<?php echo get_bloginfo("template_url") ;?>/images/divider-home.png" class="homeDivider" alt=""></li>
+                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-players.png" alt="">PLAYERS</a></li>
+                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-coaches.png" alt="">COACHES</a></li>
+                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-owners.png" alt="">FACILITY OWNERS</a></li>
+                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-recruiters.png" alt="">RECRUITERS</a></li>
+                    <li class="hidden-xs   col-sm-2"><img src="<?php echo get_bloginfo("template_url") ;?>/images/divider-home.png"  class="homeDivider last"  alt=""></li>
+                </ul>
+            </nav>
+        </div>
+        <br /><br />        
+        <div class="container">
+            <div class="row row-centered">
+                <div class="col-xs-10 col-sm-4 col-centered">
+                    <form class="form" action="">
+                    <div class="form-group">
+                        <input  type="text" name="" id="" placeholder="Username" class="form-control input-lg">
+                    </div><br />
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control input-lg">
+                    </div><br />
+                    <div class="form-group text-center">
+                    <input type="submit" value="SUBMIT" class="input-lg">
+                    <br>
+                    <a href="#">FORGOT YOUR PASSWORD?</a>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>  

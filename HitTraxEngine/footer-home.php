@@ -1,73 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
-    <script src="https://use.typekit.net/fmq0kbm.js"></script>
-    <script>
-        try{Typekit.load({async:true}); }catch(e){} 
-        </script>
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body class="page-template-page-engine-php home">
-    <header>
-        <div class="container banner">
-            <div class="row">
-                <div class="col-md-12 col-lg-12">
-                    <img id="logo" src="images/logo.png" alt="">
-                    <p class="">Select your HitTrax account type and enter your username and password.</p>
-                    </div>
-            </div>
-        </div>
-        <div class="container">
-            <nav class="row row-centered">
-                <ul>
-                    <li class="hidden-xs   col-sm-2"><img src="images/divider-home.png" class="homeDivider" alt=""></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="images/icon-players.png" alt="">PLAYERS</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="images/icon-coaches.png" alt="">COACHES</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="images/icon-owners.png" alt="">FACILITY OWNERS</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="images/icon-recruiters.png" alt="">RECRUITERS</a></li>
-                    <li class="hidden-xs   col-sm-2"><img src="images/divider-home.png"  class="homeDivider last"  alt=""></li>
-                </ul>
-            </nav>
-        </div>
-        <br /><br />        
-        <div class="container">
-            <div class="row row-centered">
-                <div class="col-xs-10 col-sm-4 col-centered">
-                    <form class="form" action="">
-                    <div class="form-group">
-                        <input  type="text" name="" id="" placeholder="Username" class="form-control input-lg">
-                    </div><br />
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control input-lg">
-                    </div><br />
-                    <div class="form-group text-center">
-                    <input type="submit" value="SUBMIT" class="input-lg">
-                    <br>
-                    <a href="#">FORGOT YOUR PASSWORD?</a>
-                    </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </header>  
+
+
+
     <footer class="large">
         <div class="container">
             <div class="row">
                 <div class="col-md-5">
-                    <img src="images/logo-footer.png" alt="">
+                    <img src="<?php echo get_bloginfo("template_url") ;?>/images/logo-footer.png" alt="">
                     <div class="footerLeft">
                         <h4>123.456.7890</h4>
                         <h4><a href="mailto:info@hittraxbaseball.com">info<span>@</span>hittraxbaseball.com</a></h4>
@@ -87,11 +25,11 @@
                 </div>
                 <div class="socialNav col-md-5 pull-right">
                     <ul class="clearfix">
-                        <li><a href=""><img src="images/social-facebook.png" alt=""></a></li>
-                        <li><a href=""><img src="images/social-twitter.png" alt=""></a></li>
-                        <li><a href=""><img src="images/social-youtube.png" alt=""></a></li>
-                        <li><a href=""><img src="images/social-instagram.png" alt=""></a></li>
-                        <li><a href=""><img src="images/social-snapchat.png" alt=""></a></li>
+                        <li><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/social-facebook.png" alt=""></a></li>
+                        <li><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/social-twitter.png" alt=""></a></li>
+                        <li><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/social-youtube.png" alt=""></a></li>
+                        <li><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/social-instagram.png" alt=""></a></li>
+                        <li><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/social-snapchat.png" alt=""></a></li>
                     </ul>
                     <h5>STAY CONNECTED WITH HITTRAX</h5>
                     <p class="tk-prima-nova">Join the HitTrax mailing list for exclusive Donec 
@@ -114,9 +52,10 @@ lacinia dui, a porttitor lectus condimentum laoreet.
         </div>
     </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <?php wp_footer(); ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php echo get_bloginfo("template_url") ;?>/js/bootstrap.min.js"></script>
     <script>
         jQuery( document ).ready(function($) {
             
