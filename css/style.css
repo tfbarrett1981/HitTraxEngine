@@ -765,9 +765,6 @@ footer.footerBar a:last-child{
 .profileHeader .row{
     position: relative;
 }
-.profileName{
-    
-}
 
 .profileHeader .profilePic{
     width: 75%;
@@ -812,6 +809,12 @@ footer.footerBar a:last-child{
     color:#C8002D;
     font-size: 26px;
 }
+
+.profileHeader select.searchSelect{
+    background: rgba(0, 0, 0, 0.7);
+    border:solid 2px #C8002D;
+}
+
 
 .statsFilter .input-group-addon{
     background: transparent;
@@ -869,6 +872,11 @@ footer.footerBar a:last-child{
 .profileName strong{
     color:#fff; ;
 }
+
+.profileHeader select.searchSelect{
+    background: rgba(255, 255, 255, 0.1);
+    border:none;
+}
 }
 
 @media(min-width:992px){
@@ -880,6 +888,8 @@ footer.footerBar a:last-child{
  position: relative;
   height: 160px;
 }
+
+
 
 
 .profileHeader .profilePic{
