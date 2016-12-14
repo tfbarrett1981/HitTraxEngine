@@ -845,6 +845,126 @@ footer.footerBar a:last-child{
     color:#C8001E;
     padding-right: 10px;
 }
+.horizontalBarGraph{
+    font-family: "ManifoldCF-ExtraBold";
+    position: relative;
+    
+    
+}
+.horizontalBarGraph h5, .horizontalBarGraph small{
+    font-size: 30px;
+    margin-bottom: 0;
+}
+
+.horizontalBarGraph .percentMarker{
+    border-right:solid 3px rgba(34, 34, 34, 0.5);
+    position: absolute;
+    height: 70px;
+    color:rgba(34, 34, 34, 0.5);
+    text-transform: uppercase;
+    padding-right: 7px;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.valign{
+    position: relative;
+    top:100%;
+    transform: translateY(-80%);
+}
+.horizontalBarGraph .percentMarker.fiftyTop{
+    left:50%;
+    transform: translate(-100%, 0);
+    
+}
+
+.horizontalBarGraph .percentMarker.ninetyTop{
+    left:90%;
+    transform: translate(-100%, 0);
+}
+
+.horizontalBarGraph .percentMarker.fiftyBottom{
+    left:38%;
+    transform: translate(-100%, 0);
+    
+    bottom:-20px;
+}
+
+.horizontalBarGraph .percentMarker.ninetyBottom{
+    left:83%;
+    transform: translate(-100%, 0);
+    vertical-align: bottom;
+    bottom:-20px;
+}
+
+.horizontalBarGraph ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+    
+}
+
+.horizontalBarGraph li{
+    height: 50px;
+    width:100%;
+    display: block;
+}
+
+.horizontalBarGraph li small{
+    font-size: 13px;   
+    font-family: "proxima-nova";
+    color: rgba(34, 34, 34, 0.5);
+    float: right;
+    line-height: 50px;
+    margin-right: 7px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.horizontalBarGraph li span{
+    
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 81px;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(34, 34, 34, 0.5);
+}
+
+
+.horizontalBarGraph li.barTop{
+    background-color: #EFEFEF;
+}
+.horizontalBarGraph li.barTop div{
+    width:72%;
+    background: linear-gradient(to right, #C0DC2D , #46B947); 
+    
+}
+
+.horizontalBarGraph li.barTop span{
+    background-color: #C0DC2D;
+    box-shadow: 8px 0 8px -3px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.horizontalBarGraph li.barBottom{
+    background-color: #DBDBDB;
+}
+
+.horizontalBarGraph li.barBottom div{
+    width:80%;
+    background: linear-gradient(to right, #E56737 , #C8001E); 
+    
+}
+
+.horizontalBarGraph li.barBottom span{
+    background-color: #E56737;
+    box-shadow: 8px 0 8px -3px rgba(34, 34, 34, 0.3);
+}
+
+
 
 @media(min-width:768px){
 
@@ -893,6 +1013,10 @@ footer.footerBar a:last-child{
 }
 .profileName{
     margin-top: 95px;
+}
+
+.horizontalBarGraph h5, .horizontalBarGraph small{
+    margin-bottom: -20px;;
 }
 }
 
