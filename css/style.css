@@ -851,9 +851,10 @@ footer.footerBar a:last-child{
     
     
 }
-.horizontalBarGraph h5, .horizontalBarGraph small{
+.profile h5, .profile h5 small{
     font-size: 30px;
     margin-bottom: 0;
+    font-family: "ManifoldCF-ExtraBold";
 }
 
 .horizontalBarGraph .percentMarker{
