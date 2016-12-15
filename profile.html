@@ -19,6 +19,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
   </head>
   <body class="page main profile">
     <header>
@@ -285,6 +286,13 @@
                             </div>
                         </div>
                     </section>
+                    <br /><br />
+                    <section class="metrics">
+                        <h5 class="header-line clearfix"><div>TRENDS</div><img class="collapse-arrow pull-right" src="images/collapse-arrow.png" /></h5>
+                        
+                        <canvas id="myChart"></canvas>
+                        
+                    </section>
                 </div>
             </div>
         </div>
@@ -344,62 +352,43 @@ lacinia dui, a porttitor lectus condimentum laoreet.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    
     <script>
-        jQuery( document ).ready(function($) {
-            
-            $( ".tab" ).each(function( index ) {
-                    $("." + $(this).data("tab")).hide();
-                });
-            $(".tab").click(function(e){
-                $selectedTab = $(this);
-                $( ".tab" ).each(function( index ) {
-                    $("." + $(this).data("tab")).hide();
-                    $(this).find("img").attr("src", "images/tab-arrow.png");
-                });
+      var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+scaleBeginAtZero: false,
+  options: {
 
-                $selectedTab.find("img").attr("src", "images/tab-x.png");
-                var tabPanel = "." + $selectedTab.data("tab");
-                $(tabPanel).show();
+      responsive: true,
+      scales: {
+          
+          yAxes: [{
 
-            });
+               ticks: {
+                  stepSize: 2,
+              }
 
-            $(".search select").change(function(){
-                var changedSelect = $(this);
-                var label = $(this).siblings("label");
-                $(".searchItems").find("." + changedSelect.attr("id")).remove();
-                if($(this).val() != ""){
-                $(".searchItems").append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
-                }
-                
-            });
-
-            $(".search input[type='text']").focusout(function(){
-                var changedSelect = $(this);
-                var label = $(this).siblings("label");
-                $(".searchItems").find("." + changedSelect.attr("id")).remove().delay("1000");
-                if($(this).val() != ""){
-                $(".searchItems").delay(100).queue(function(next){
-                    $(this).append("<li data-parent="+ changedSelect.attr("id") +" class='"+ changedSelect.attr("id") +" tk-proxima-nova'><span class='glyphicon glyphicon-remove-circle'></span>"+ label.text() +": "+ changedSelect.val() +"</li>");
-                    next();
-                    });
-
-                }
-                
-            });
-
-            $(".results table tr td:first-child").click(function(e){
-                var selectedRow = $(this);
-                $(".results table tr").removeClass("selected");
-                selectedRow.parent().addClass("selected");
-            });
-
-            $("body").on("click", ".glyphicon-remove-circle", function(){
-                var parentFormElement = $(this).parent().data("parent");
-                $(this).parent().remove();
-                $("#"+ parentFormElement).val('');
-            });
-
-        });
+          }]
+      }
+      },
+  data: {
+    labels: ['2016-01-01', '2016-01-15', '2016-02-01', '2016-02-15', '2016-03-01', '2016-03-05', '2016-04-01','2016-04-15','2016-05-01','2016-06-01','2016-06-15'],
+    datasets: [{
+      label: 'EXIT VELOCITY',
+      data: [90, 95, 87, 91, 94, 95, 92, 89, 90, 88, 93],
+      fill: false,
+      lineTension: 0
+    },{
+      label: 'AVG VELOCITY',
+      data: [96, 91, 97, 91, 91, 92, 96, 89, 88, 92, 94],
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,0,0.2)",
+      borderColor:"rgba(0,0,0,0.2)"
+    }]
+  }
+});
     </script>
   </body>
 </html>
