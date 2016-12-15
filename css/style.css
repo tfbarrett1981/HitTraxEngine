@@ -648,9 +648,7 @@ footer.footerBar a:last-child{
 
 @media(min-width:768px){
     
-    table thead th:first-child{ 
-        min-width: 250px;
-    }
+   
     
     
 
@@ -852,9 +850,27 @@ footer.footerBar a:last-child{
     
 }
 .profile h5, .profile h5 small{
-    font-size: 30px;
+    font-size: 16px;
     margin-bottom: 0;
     font-family: "ManifoldCF-ExtraBold";
+}
+
+.profile h5.header-line{
+    background: url(../images/header-line.png) center center repeat-x;
+    position: relative
+}
+
+.profile h5.header-line > div{
+    background: #fff;
+    padding-right:15px;
+    display: inline-block;
+}
+
+.profile h5.header-line .collapse-arrow{
+    position: absolute;
+    top:-4px;
+    width: 25px;
+    right: 0;
 }
 
 .horizontalBarGraph .percentMarker{
@@ -965,6 +981,86 @@ footer.footerBar a:last-child{
     box-shadow: 8px 0 8px -3px rgba(34, 34, 34, 0.3);
 }
 
+.statTabs{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    margin: 10px 0 20px 0;
+}
+
+.statTabs li{
+    width:33.0%;
+    float:left;
+    background-color: #C6C6C6;
+    height: 60px;
+    
+    font-family: "ManifoldCF-Regular";
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-right: solid 2px #fff;
+    cursor: pointer;
+    position: relative;
+    padding:0 5px;
+}
+
+.statTabs li.active{
+    background-color: #333333;
+    color:#fff;
+}
+
+.statTabs li:nth-child(2){
+width: 34%;
+}
+
+.statTabs li span{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+}
+
+.metrics h6{
+    color:#C8001E;
+    font-family: "proxima-nova";
+    font-size: 21px;
+    font-weight: bold;
+    border-bottom: solid 3px #333333;
+    padding-bottom: 10px;
+}
+
+.metrics ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: "proxima-nova";
+    font-size: 15px;
+    margin-bottom: 20px
+}
+
+.metrics ul li{
+    padding:10px 0px;
+    border-bottom:solid 1px #999999;
+}
+.metrics ul li small{
+    color:#C8001E;
+    font-weight: bold;
+}
+.btn-primary{
+    background: #fff;
+    color:#333333;
+    border: solid 3px #C8001E;
+    font-family: "ManifoldCF-ExtraBold";
+}
+
+.btn-primary:hover{
+   background: #C8001E; 
+   color:#fff;
+   border: solid 3px #C8001E;
+}
 
 
 @media(min-width:768px){
@@ -987,6 +1083,15 @@ footer.footerBar a:last-child{
 
 .profileName strong{
     color:#fff; ;
+}
+
+.profile h5, .profile h5 small{
+    font-size:30px;
+}
+
+.profile h5.header-line .collapse-arrow{
+    width:50px;
+    top:-10px;
 }
 
 }
