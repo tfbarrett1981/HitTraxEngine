@@ -855,18 +855,18 @@ footer.footerBar a:last-child{
     font-family: "ManifoldCF-ExtraBold";
 }
 
-.profile h5.header-line{
+h5.header-line{
     background: url(../images/header-line.png) center center repeat-x;
     position: relative
 }
 
-.profile h5.header-line > div{
+h5.header-line > div{
     background: #fff;
     padding-right:15px;
     display: inline-block;
 }
 
-.profile h5.header-line .collapse-arrow{
+h5.header-line .collapse-arrow{
     position: absolute;
     top:-4px;
     width: 25px;
