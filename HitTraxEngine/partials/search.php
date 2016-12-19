@@ -1,4 +1,7 @@
- <nav>
+<?php
+include(getcwd() . "/api/centralDB.php");
+?> 
+<nav>
             <div class="container">
                 <ul class="row clearfix">
                     <li data-tab="playerDetail" class="tab col-sm-4 col-xs-12"><a href="#">Player Details<span class="pull-right"><img src="<?php echo get_bloginfo("template_url") ;?>/images/tab-arrow.png" alt=""></span></a></li>
@@ -18,7 +21,7 @@
                     <div class="col-sm-3">
                         <div class="searchElement">
                             <label for="textboxName" class="tk-proxima-nova">Player Name</label>
-                            <input id="textboxName" type="text" class="searchTextbox">
+                            <input name="textboxName" id="textboxName" type="text" class="searchTextbox">
                         </div>
                         <div class="searchElement">
                             <label for="selectSport" class="tk-proxima-nova">Sport</label>
@@ -95,12 +98,12 @@
                             <select name="selectRegion" id="selectRegion" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
                             <option value="All">All</option>
-                            <option value="C">Central</option>
-                            <option value="LA">Latin America</option>
-                            <option value="MW">Mid West</option>
-                            <option value="NE">North East</option>
-                            <option value="SE">South East</option>
-                            <option value="W">West</option>
+                            <option value="Central">Central</option>
+                            <option value="Latin America">Latin America</option>
+                            <option value="Mid West">Mid West</option>
+                            <option value="North East">North East</option>
+                            <option value="South East">South East</option>
+                            <option value="West">West</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -151,19 +154,19 @@
                             <div class="overlay-arrow">▼</div>
                             <select name="selectHeight" id="selectHeight" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value="5.4">5'4"</option>
-                            <option value="5.5">5'5"</option>
-                            <option value="5.6">5'6"</option>
-                            <option value="5.7">5'7"</option>
-                            <option value="5.8">5'8"</option>
-                            <option value="5.9">5'9"</option>
-                            <option value="5.10">5'10"</option>
-                            <option value="5.11">5'11"</option>
-                            <option value="6.0">6'0"</option>
-                            <option value="6.1">6'1"</option>
-                            <option value="6.2">6'2"</option>
-                            <option value="6.3">6'3"</option>
-                            <option value="6.4">6'4"</option>
+                            <option value="5 ft 4 in">5'4"</option>
+                            <option value="5 ft 5 in">5'5"</option>
+                            <option value="5 ft 6 in">5'6"</option>
+                            <option value="5 ft 7 in">5'7"</option>
+                            <option value="5 ft 8 in">5'8"</option>
+                            <option value="5 ft 9 in">5'9"</option>
+                            <option value="5 ft 10 in">5'10"</option>
+                            <option value="5 ft 11 in">5'11"</option>
+                            <option value="6 ft">6'0"</option>
+                            <option value="6 ft 1 in">6'1"</option>
+                            <option value="6 ft 2 in">6'2"</option>
+                            <option value="6 ft 3 in">6'3"</option>
+                            <option value="6 ft 4 in">6'4"</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -171,20 +174,20 @@
                             <div class="overlay-arrow">▼</div>
                             <select name="selectWeight" id="selectWeight" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value="120">120</option>
-                            <option value="130">130</option>
-                            <option value="140">140</option>
-                            <option value="150">150</option>
-                            <option value="160">160</option>
-                            <option value="170">170</option>
-                            <option value="180">180</option>
-                            <option value="190">190</option>
-                            <option value="200">200</option>
-                            <option value="210">210</option>
-                            <option value="220">220</option>
-                            <option value="230">230</option>
-                            <option value="240">240</option>
-                            <option value="250">250</option>
+                            <option value="120 - 130 lbs">120 - 130 lbs</option>
+                            <option value="130 - 140 lbs">130 - 140 lbs</option>
+                            <option value="140 - 150 lbs">140 - 150 lbs</option>
+                            <option value="150 - 160 lbs">150 - 160 lbs</option>
+                            <option value="160 - 170 lbs">160 - 170 lbs</option>
+                            <option value="170 - 180 lbs">170 - 180 lbs</option>
+                            <option value="180 - 190 lbs">180 - 190 lbs</option>
+                            <option value="190 - 200 lbs">190 - 200 lbs</option>
+                            <option value="200 - 210 lbs">200 - 210 lbs</option>
+                            <option value="210 - 220 lbs">210 - 220 lbs</option>
+                            <option value="220 - 230 lbs">220 - 230 lbs</option>
+                            <option value="230 - 240 lbs">230 - 240 lbs</option>
+                            <option value="240 - 250 lbs">240 - 250 lbs</option>
+                            <option value="250 - 260 lbs">250 - 260 lbs</option>
                             </select>
                         </div>
                     </div>
@@ -234,9 +237,14 @@
                             <div class="overlay-arrow">▼</div>
                             <select name="selectMaxExit" id="selectMaxExit" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+							<option value="120 mph">120 mph</option>
+							<option value="110 mph">110 mph</option>
+							<option value="100 mph">100 mph</option>
+                            <option value="90 mph">90 mph</option>
+                            <option value="80 mph">80 mph</option>
+                            <option value="70 mph">70 mph</option>
+                            <option value="60 mph">60 mph</option>
+                            <option value="50 mph">50 mph</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -244,19 +252,28 @@
                             <div class="overlay-arrow">▼</div>
                             <select name="selectMaxDistance" id="selectMaxDistance" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="600ft">600ft</option>
+                            <option value="500ft">500ft</option>
+                            <option value="400ft">400ft</option>
+                            <option value="350ft">350ft</option>
+                            <option value="300ft">300ft</option>
+                            <option value="250ft">250ft</option>
+                            <option value="200ft">200ft</option>
+                            <option value="150ft">150ft</option>
+                            <option value="100ft">100ft</option>
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="selectAngleGreater" class="tk-proxima-nova">Launch Angle ≥&nbsp;</label>
+                            <label for="selectLaunchAngleGreater" class="tk-proxima-nova">Launch Angle ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
-                            <select name="selectAngleGreater" id="selectAngleGreater" class="tk-proxima-nova searchSelect">
+                            <select name="selectLaunchAngleGreater" id="selectLaunchAngleGreater" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="60%">60%</option>
+                            <option value="50%">50%</option>
+                            <option value="40%">40%</option>
+                            <option value="30%">30%</option>
+                            <option value="20%">20%</option>
+                            <option value="10%">10%</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -276,20 +293,27 @@
                             <label for="selectAvgExitVelGreater" class="tk-proxima-nova">Avg. Exit Velocity ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="selectAvgExitVelGreater" id="selectAvgExitVelGreater" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value="cvcvc">cvcvc</option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            	<option value=""></option>
+								<option value="100 mph">100 mph</option>
+	                            <option value="90 mph">90 mph</option>
+	                            <option value="80 mph">80 mph</option>
+	                            <option value="70 mph">70 mph</option>
+	                            <option value="60 mph">60 mph</option>
+	                            <option value="50 mph">50 mph</option>
                             </select>
                         </div>
                         <div class="searchElement">
                             <label for="selectAvgDistanceGreater" class="tk-proxima-nova">Avg. Distance ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="selectAvgDistanceGreater" id="selectAvgDistanceGreater" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+ 	                            <option value=""></option>
+	                            <option value="400ft">400ft</option>
+	                            <option value="350ft">350ft</option>
+	                            <option value="300ft">300ft</option>
+	                            <option value="250ft">250ft</option>
+	                            <option value="200ft">200ft</option>
+	                            <option value="150ft">150ft</option>
+	                            <option value="100ft">100ft</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -297,9 +321,12 @@
                             <div class="overlay-arrow">▼</div>
                             <select name="selectLaunchAngleLess" id="selectLaunchAngleLess" class="tk-proxima-nova searchSelect">
                             <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+                            <option value="60%">60%</option>
+                            <option value="50%">50%</option>
+                            <option value="40%">40%</option>
+                            <option value="30%">30%</option>
+                            <option value="20%">20%</option>
+                            <option value="10%">10%</option>
                             </select>
                         </div>
                         <div class="searchElement">
@@ -316,33 +343,51 @@
                     <div class="col-sm-2">
                         <strong>&nbsp;</strong>
                         <div class="searchElement">
-                            <label for="selectLineDrive" class="tk-proxima-nova">Line Drive %&nbsp;</label>
+                            <label for="selectLineDrive" class="tk-proxima-nova">Line Drive % ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="selectLineDrive" id="selectLineDrive" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value="cvcvc">cvcvc</option>
-                            <option value=""></option>
-                            <option value=""></option>
+  	                            <option value=""></option>
+	                            <option value="90%">90%</option>
+	                            <option value="80%">80%</option>
+	                            <option value="70%">70%</option>
+	                            <option value="60%">60%</option>
+	                            <option value="50%">50%</option>
+	                            <option value="40%">40%</option>
+	                            <option value="30%">30%</option>
+	                            <option value="20%">20%</option>
+	                            <option value="10%">10%</option>
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="selectGroundBall" class="tk-proxima-nova">Ground Ball %&nbsp;</label>
+                            <label for="selectGroundBall" class="tk-proxima-nova">Ground Ball % ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="selectGroundBall" id="selectGroundBall" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+	                            <option value=""></option>
+	                            <option value="90%">90%</option>
+	                            <option value="80%">80%</option>
+	                            <option value="70%">70%</option>
+	                            <option value="60%">60%</option>
+	                            <option value="50%">50%</option>
+	                            <option value="40%">40%</option>
+	                            <option value="30%">30%</option>
+	                            <option value="20%">20%</option>
+	                            <option value="10%">10%</option>
                             </select>
                         </div>
                         <div class="searchElement">
-                            <label for="selectFlyBall" class="tk-proxima-nova">Fly Ball %&nbsp;</label>
+                            <label for="selectFlyBall" class="tk-proxima-nova">Fly Ball % ≥&nbsp;</label>
                             <div class="overlay-arrow">▼</div>
                             <select name="selectFlyBall" id="selectFlyBall" class="tk-proxima-nova searchSelect">
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
-                            <option value=""></option>
+  	                            <option value=""></option>
+	                            <option value="90%">90%</option>
+	                            <option value="80%">80%</option>
+	                            <option value="70%">70%</option>
+	                            <option value="60%">60%</option>
+	                            <option value="50%">50%</option>
+	                            <option value="40%">40%</option>
+	                            <option value="30%">30%</option>
+	                            <option value="20%">20%</option>
+	                            <option value="10%">10%</option>
                             </select>
                         </div>
                     </div>
@@ -608,14 +653,19 @@
                             <h3>YOUR SEARCH</h3>
                         </li>
                         <li><a class="active tk-proxima-nova" href="#"><span id='results_spot'><?php echo($num_results); ?></span> Results</a></li>
-                        <li><a href="#">Save This Search</a></li>
-                        <li><a class="disabled" href="#">Start Over</a></li>
+                        <li><a data-toggle="modal" href="#searchSave-modal">Save This Search</a></li>
+                        <li><a href="javascript:void(0);" id="start_over_link">Start Over</a></li>
                     </ul>
                     <ul class="searchItems clearfix">
                         
                         
                     </ul>
                 </div>
+				<?php
+				$mid = get_user_meta(get_current_user_id(), 'MasterID', true);
+				//$mid = '21535:133';
+				?>
+				<input type='hidden' name='MasterID' id='MasterID' value='<?php echo($mid); ?>' />
                 <div class="col-md-3  col-xs-12 pull-right">
                     <input type="button" class="button" value="search now" name="submit_search">
                     <span class="glyphicon glyphicon-search"></span>
@@ -623,8 +673,17 @@
                         <div class="overlay-arrow">▼</div>
                         <select name="savedSearch" id="savedSearch" class="searchSelect">
                             <option value="">SAVED SEARCH</option>
+							<?php
+							// Pull back all saved searches for this user. 
+							$sql = "SELECT * FROM SavedRecruitingSearches WHERE MasterID = '$mid'";
+							
+							$result = mysqli_query($dbConnection,$sql);
+
+							while ($row = mysqli_fetch_assoc($result)) {
+								echo("<option value='".$row['id']."'>".$row['SearchName']."</option>");
+							}
+							?>
                         </select>
-                        
                     </div>
                     <br />
                 </div>

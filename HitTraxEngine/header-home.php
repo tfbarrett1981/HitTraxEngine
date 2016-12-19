@@ -26,7 +26,7 @@
             <div class="row">
                 <div class="col-md-12 col-lg-12">
                     <img id="logo" src="<?php echo get_bloginfo("template_url") ;?>/images/logo.png" alt="">
-                    <p class="">Select your HitTrax account type and enter your username and password.</p>
+                    <p>&nbsp;</p>
                     </div>
             </div>
         </div>
@@ -34,10 +34,10 @@
             <nav class="row row-centered">
                 <ul>
                     <li class="hidden-xs   col-sm-2"><img src="<?php echo get_bloginfo("template_url") ;?>/images/divider-home.png" class="homeDivider" alt=""></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-players.png" alt="">PLAYERS</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-coaches.png" alt="">COACHES</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-owners.png" alt="">FACILITY OWNERS</a></li>
-                    <li class="col-xs-6 col-sm-2"><a href=""><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-recruiters.png" alt="">RECRUITERS</a></li>
+                    <li class="col-xs-6 col-sm-2"><div ><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-players-hover.png" alt="">PLAYERS</div></li>
+                    <li class="col-xs-6 col-sm-2"><div ><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-coaches-hover.png" alt="">COACHES</div></li>
+                    <li class="col-xs-6 col-sm-2"><div ><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-owners-hover.png" alt="">FACILITY OWNERS</div></li>
+                    <li class="col-xs-6 col-sm-2"><div ><img src="<?php echo get_bloginfo("template_url") ;?>/images/icon-recruiters-hover.png" alt="">RECRUITERS</div></li>
                     <li class="hidden-xs   col-sm-2"><img src="<?php echo get_bloginfo("template_url") ;?>/images/divider-home.png"  class="homeDivider last"  alt=""></li>
                 </ul>
             </nav>
@@ -46,12 +46,13 @@
         <div class="container">
             <div class="row row-centered">
                 <div class="col-xs-10 col-sm-4 col-centered">
-                    <form class="form" action="">
+                    <div id="login_failure" class="alert alert-danger" style='<?php if(!$_GET["login"] == "failed"){ ?>display:none; <?php } ?>text-align:center;'><strong>Incorrect username/password.</strong></div>
+	                <form action="http://engine.hittraxstatscenter.com/wp-login.php" method="post">
                     <div class="form-group">
-                        <input  type="text" name="" id="" placeholder="Username" class="form-control input-lg">
+                        <input  type="text" name="log" id="log" placeholder="Username" class="form-control input-lg">
                     </div><br />
                     <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control input-lg">
+                        <input type="password" name="pwd" id="pwd" placeholder="Password" class="form-control input-lg">
                     </div><br />
                     <div class="form-group text-center">
                     <input type="submit" value="SUBMIT" class="input-lg">

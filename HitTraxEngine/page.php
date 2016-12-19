@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12">
 					<div id="searchData">
-                    <table class="table tk-proxima-nova"><thead></tr><th>Player Name</th><th>Position</th><th>Bats</th><th>Throws</th><th>Height</th><th>Weight</th><th>Age</th><th>Graduation Year</th></tr></thead><tbody>
+                    <table class="table tk-proxima-nova"><thead></tr><th>Player Name</th><th>Position</th><th>Graduation Year</th><th>State</th><th>Avg. Exit Velocity</th><th>Max Exit Velocity</th><th>Avg. Distance</th><th>Max Distance</th></tr></thead><tbody>
                     <tr class="noresults">
                         <td colspan="8">No Results.</td>
                     </tr>
@@ -19,8 +19,6 @@
             </div>
         </div>
     </section>
-
-
 
 
 <?php get_footer(); ?>

@@ -391,4 +391,223 @@ function bootstrap_theme_enqueue_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'bootstrap_theme_enqueue_scripts', 1 );
 
+//*********
+//*********
+//*********
+
+/* Filter Login to use the Central DB */
+remove_filter('authenticate', 'wp_authenticate_username_password', 20, 3);
+add_filter('authenticate', 'vd_authenticate_username_password', 20, 3);
+
+function vd_authenticate_username_password($user, $username, $password){
+	// we're going to check to see if the visitor is trying to sign in with their e-mail address
+	
+	
+	if( is_email( $username ) ){
+		/*
+			if( $user_obj = get_user_by( 'email' , $username ) ){
+			$username = $user_obj->user_login;
+			return wp_authenticate_username_password($user, $username, $password );
+		} else {
+
+		*/
+		$email = $username; //just for easy use
+
+		// if the user doesn't exisit, we're going to want to create it based off the Central DB
+
+		include_once(getcwd() . "/api/helpers.php"); //functions in the custom created api that will help us !
+		//let's see if there is a user in the Central DB with the e-mail / password combination
+		if( $vd_db_user_array = vd_db_user_check($email, $password) ){
+			// hazah! there seems to be a user, let's check to see if there is a wordpress user based on the MasterID key from the central DB
+			// if there isn't already a user, we'll create a new one. If there is a user, they must have changed info at a kiosk or something!
+			// we'll sync any data that has changed here and proceed to log them in :)
+			$mid = $vd_db_user_array['MasterID'];
+			$role = $vd_db_user_array['Role'];
+
+			if($mid == '') { return false; }
+						
+			// check to see if there is a wp user with the mid
+			$users = get_users('meta_key=MasterID&meta_value=' . $mid );
+
+			if(!empty($users)){
+				//echo $users[0]->ID . " ". $email . " ". $password;
+				
+				
+				// there is a user account with that mid - lets update the password and such
+				wp_update_user( array ( 'ID' => $users[0]->ID,  'user_email' => $email, 'user_pass' => $password ) );
+					
+				// we might need to update the role - maybe they've just been given admin access ? 
+				update_user_meta($users[0]->ID, 'VD_Role', $role, true );
+				
+				// after we have updated everything, we should be able to login normally !
+
+				$new_user_obj = get_user_by( 'ID' , $users[0]->ID );
+				
+				
+				return wp_authenticate_username_password($new_user_obj, $username, $password );
+
+			}else{
+				// nothing matching in the user DB, we'll have to make a new WP user and sync up!
+
+				$uid = wp_create_user( $username, $password, $email );
+
+				if(is_wp_error($uid)){
+					
+					if($uid->get_error_code() == 'existing_user_login'){
+						// this user is already in the database but the MasterID has been changed ? or something ?
+
+						/*
+						echo $user[0]-ID;
+						update_user_meta($user[0]-ID, 'MasterID', $mid, true );
+
+						// try to login ?
+						$new_user_obj = get_user_by( 'id' , $users[0]->ID );
+						return wp_authenticate_username_password($new_user_obj, $username, $password );
+
+						*/
+					}
+				}
+
+				//add the master id user meta
+				add_user_meta($uid, 'MasterID', $mid, true);
+
+				// add the role (really only useful if the role is != 0)
+				if($role != 0) add_user_meta( $uid, 'VD_Role', $role, true );
+
+				// $uid will be an array if there is an error
+
+				if(!is_wp_error($uid)){
+
+					// the user was created, but now we need to "login" and move forward
+					$new_user_obj = get_user_by( 'id' , $uid );
+					return wp_authenticate_username_password($new_user_obj, $username, $password );
+				}
+			}
+
+		} else {
+			// there was not a user with these credentials, we shouldn't authenticate them
+			echo 'no user in db';
+			return false; 
+		}
+
+		return false; 
+
+		
+	}else{
+		//trying to use username (for wp admin)
+		return wp_authenticate_username_password($user, $username, $password );
+
+	}
+}
+
+
+function vd_authenticate_username_password_md5($user, $username, $password){
+	// we're going to check to see if the visitor is trying to sign in with their e-mail address
+	if( is_email( $username ) ){
+		/*
+			if( $user_obj = get_user_by( 'email' , $username ) ){
+			$username = $user_obj->user_login;
+			return wp_authenticate_username_password($user, $username, $password );
+		} else {
+
+		*/
+		$email = $username; //just for easy use
+
+		// if the user doesn't exisit, we're going to want to create it based off the Central DB
+
+		include_once(getcwd() . "/api/helpers.php"); //functions in the custom created api that will help us !
+		//let's see if there is a user in the Central DB with the e-mail / password combination
+		if( $vd_db_user_array = vd_db_user_check_md5($email, md5($password)) ){
+			// hazah! there seems to be a user, let's check to see if there is a wordpress user based on the MasterID key from the central DB
+			// if there isn't already a user, we'll create a new one. If there is a user, they must have changed info at a kiosk or something!
+			// we'll sync any data that has changed here and proceed to log them in :)
+			$mid = $vd_db_user_array['MasterID'];
+			$role = $vd_db_user_array['Role'];
+			// check to see if there is a wp user with the mid
+			$users = get_users('meta_key=MasterID&meta_value=' . $mid);
+
+			if(!empty($users)){
+				//echo('here');
+				// there is a user account with that mid - lets update the password and such
+				wp_update_user( array ( 'ID' => $users[0]->ID,  'user_email' => $email, 'user_pass' => $password ) );
+
+				// we might need to update the role - maybe they've just been given admin access ? 
+				update_user_meta($user[0]->ID, 'VD_Role', $role, true );
+
+				// after we have updated everything, we should be able to login normally !
+
+				$new_user_obj = get_user_by( 'id' , $users[0]->ID );
+
+				return wp_authenticate_username_password($new_user_obj, $username, $password );
+
+			}else{
+				//echo('there');
+				// nothing matching in the user DB, we'll have to make a new WP user and sync up!
+				$uid = wp_create_user( $username, $password, $email );
+
+				//add the master id user meta
+				add_user_meta($uid, 'MasterID', $mid, true);
+
+				// add the role (really only useful if the role is != 0)
+				if($role != 0) add_user_meta( $uid, 'VD_Role', $role, true );
+
+				// $uid will be an array if there is an error
+
+				if(!is_array($uid)){
+
+					// the user was created, but now we need to "login" and move forward
+					$new_user_obj = get_user_by( 'id' , $uid );
+					return wp_authenticate_username_password($new_user_obj, $username, $password );
+				}
+			}
+
+		} else {
+			// there was not a user with these credentials, we shouldn't authenticate them
+			echo 'no user in db';
+			return false; 
+		}
+
+		return false; 
+
+		
+	}else{
+		//trying to use username (for wp admin)
+		return wp_authenticate_username_password($user, $username, $password );
+
+	}
+}
+
+add_filter("login_redirect", "vd_login_redirect", 10, 3);
+
+/* Filter the default login page */
+function vd_login_redirect( $redirect_to, $request, $user ){
+    //is there a user to check?
+    global $user;
+    if( isset( $user->roles ) && is_array( $user->roles ) ) {
+        //check for admins
+        if( in_array( "administrator", $user->roles ) ) {
+            // redirect them to the default place
+            return $redirect_to;
+        } else {
+        	//find out if they're a facility admin
+        	if(get_user_meta( $user->ID, 'VD_Role', true ) != 0) return get_bloginfo("url") . "/engine-search/";
+            return get_bloginfo("url") . "/engine-search/";	// to add, check if they're facility or general user and redirect accordingly
+        }
+    }
+    else {
+        return $redirect_to;
+    }
+}
+
+add_action( 'wp_login_failed', 'my_front_end_login_fail' ); // hook failed login
+
+function my_front_end_login_fail( $username ) {
+$referrer = $_SERVER['HTTP_REFERER']; // where did the post submission come from?
+//$referrer = "https://hittraxstatscenter.com/new-homepage";
+// if there's a valid referrer, and it's not the default log-in screen
+if ( !empty($referrer) && !strstr($referrer,'wp-login') && !strstr($referrer,'wp-admin') ) {
+wp_redirect( get_bloginfo("url") . '/?login=failed' ); // let's append some information (login=failed) to the URL for the theme to use
+exit;
+}
+}
 ?>

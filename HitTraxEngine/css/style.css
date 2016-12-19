@@ -718,7 +718,7 @@ footer.footerBar a:last-child{
 .home nav .homeDivider.last{
     right: 0;
 }
-.home nav ul li a{
+.home nav ul li div{
     color:#fff;
     text-decoration: none;
     font-weight: bold; 
@@ -734,6 +734,34 @@ footer.footerBar a:last-child{
 
 .home nav ul li:last-child img{
    float: right;
+}
+
+.btn-primary{
+    background: #fff;
+    color:#333333;
+    border: solid 3px #C8001E;
+    font-family: "ManifoldCF-ExtraBold";
+    text-transform: uppercase;
+}
+
+.btn-primary:hover{
+   background: #C8001E; 
+   color:#fff;
+   border: solid 3px #C8001E;
+}
+
+.btn-default{
+    background: #C8001E; 
+   color:#fff;
+   border: solid 3px #C8001E;
+    font-family: "ManifoldCF-ExtraBold";
+    text-transform: uppercase;
+}
+
+.btn-default:hover{
+   background: #fff;
+    color:#333333;
+    border: solid 3px #C8001E;
 }
 
 

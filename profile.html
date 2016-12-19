@@ -293,6 +293,12 @@
                         <canvas id="myChart"></canvas>
                         
                     </section>
+                    <section class="metrics">
+                        <h5 class="header-line clearfix"><div>LAUNCH ANGLE</div><img class="collapse-arrow pull-right" src="images/collapse-arrow.png" /></h5>
+                        
+                        <canvas id="myScatter"></canvas>
+                        
+                    </section>
                 </div>
             </div>
         </div>
@@ -388,6 +394,39 @@ scaleBeginAtZero: false,
       borderColor:"rgba(0,0,0,0.2)"
     }]
   }
+});
+ var ctx2 = document.getElementById('myScatter').getContext('2d');
+var scatterChart = new Chart(ctx2, {
+    type: 'line',
+    
+    data: {
+        datasets: [{
+            label: 'Scatter Dataset',
+            fill:   false,
+            data: [{
+                x: 40,
+                y: -80
+            }, {
+                x: 70,
+                y: 0
+            }, {
+                x: 40,
+                y: 75
+            }, {
+                x: 75,
+                y: 40
+            }
+            ]
+        }]
+    },
+    options: {
+        scales: {
+            xAxes: [{
+                type: 'linear',
+                position: 'bottom'
+            }]
+        }
+    }
 });
     </script>
   </body>
