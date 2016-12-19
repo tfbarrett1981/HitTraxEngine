@@ -1085,11 +1085,12 @@ width: 34%;
     color:#fff; ;
 }
 
-.profile h5, .profile h5 small{
+h5,
+h5 small{
     font-size:30px;
 }
 
-.profile h5.header-line .collapse-arrow{
+h5.header-line .collapse-arrow{
     width:50px;
     top:-10px;
 }
